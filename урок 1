@@ -1,0 +1,11 @@
+class ass:
+    def __init__(self, xa):
+        self.xa = xa
+
+    def __str__(self):
+        return str("My name is  " + self.xa)
+
+
+xa = str(input())
+show_message = ass(xa)
+print(show_message)
