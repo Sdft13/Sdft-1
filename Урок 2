@@ -1,0 +1,37 @@
+class Sneakers:
+    def __init__(self, brand, size, price):
+        self.brand = brand
+        self.size = size
+        self.price = price
+class SneakersStore:
+    def __init__(self):
+        self.stock = []
+    def ass_sneakers(self, brand, size, price):
+        sneaker = Sneakers(brand, size, price)
+        self.stock.append(sneaker)
+        print("Были добавлены" + brand + str(size)+ str(price))
+    def displaystock(self):
+        if self.stock == []:
+            print("Склад пустой")
+        else:
+            print("В складе есть")
+            for sneaker in self.stock:
+                print(sneaker.brand, sneaker.size, sneaker.price)
+
+    def buy(self, brand, size, budget):
+        for sneaker in self.stock:
+            if sneaker in self.stock:
+                if sneaker.budget >= sneaker.budget:
+                 if sneaker.brand == brand and sneaker.size == size:
+                    self.stock.remove(sneaker)
+                print("ты купил",brand + str(size))
+                return
+            print("В Наличии этих кросов нету")
+
+budget = int(input())
+store = SneakersStore()
+store.ass_sneakers("Nike, 52, 30000")
+store.ass_sneakers("Puma, 36, 6500")
+store.ass_sneakers("adidas, 42, 25000")
+
+store.buy('Nike', 52, budget)
