@@ -1,0 +1,32 @@
+def calculator(operation):
+    def wrapper(a, b):
+        if operation == "add":
+            return a + b
+        elif operation == "subtract":
+            return a - b
+        elif operation == "multiply":
+            return a * b
+        elif operation == "divide":
+            return "Ошибка: деление на ноль" if b == 0 else a / b
+    return wrapper
+@calculator("add")
+def add(a, b):
+    pass
+@calculator("subtract")
+def subtract(a, b):
+    pass
+@calculator("multiply")
+def multiply(a, b):
+    pass
+@calculator("divide")
+def divide(a, b):
+    pass
+results = [
+    add(10, 5),     
+    subtract(10, 5),  
+    multiply(10, 5),    
+    divide(10, 5),     
+    divide(10, 0)      
+]
+print(*results, sep=", ")
+
