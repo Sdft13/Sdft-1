@@ -1,0 +1,6 @@
+def ass():
+     n =int(input())
+     yield n
+n = ass()
+for num in n:
+    print(num * num)
