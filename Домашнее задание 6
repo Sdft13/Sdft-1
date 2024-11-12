@@ -1,0 +1,29 @@
+from colorama import init, Fore, Style
+
+init(autoreset=True)
+
+result = []
+
+def divider(a, b):
+    if a < b:
+        raise ValueError("Значение a должно быть больше или равно b")
+    if b > 100:
+        raise IndexError("Значение b должно быть меньше или равно 100")
+    return a / b
+
+data = {10: 2, 2: 5, "123": 4, 18: 0, (1, 2): 15, 8: 4}
+
+for key in data:
+    try:
+        res = divider(key, data[key])
+        result.append(res)
+    except ValueError as ve:
+        print(Fore.RED + f"ValueError: {ve}")
+    except IndexError as ie:
+        print(Fore.YELLOW + f"IndexError: {ie}")
+    except ZeroDivisionError as zde:
+        print(Fore.BLUE + f"ZeroDivisionError: Деление на ноль")
+    except TypeError as te:
+        print(Fore.MAGENTA + f"TypeError: Неподдерживаемый тип данных ({te})")
+
+print(Style.RESET_ALL + f"Результат: {result}")
