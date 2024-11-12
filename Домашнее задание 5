@@ -1,0 +1,10 @@
+from colorama import init, Fore, Back, Style
+
+
+init(autoreset=True)
+
+
+print(Fore.RED + "This is red text")
+print(Back.YELLOW + "This text has a yellow background")
+print(Fore.GREEN + Back.WHITE + Style.BRIGHT + "Bright green text on white background")
+print(Style.RESET_ALL + "Back to normal text")
