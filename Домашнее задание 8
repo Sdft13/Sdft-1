@@ -1,0 +1,29 @@
+import time
+
+def measure_time(func, *args, **kwargs):
+    """Измеряет время работы переданной функции."""
+    start = time.time()
+    result = func(*args, **kwargs)
+    end = time.time()
+    return end - start
+
+
+def example_function_1():
+    time.sleep(0.5)
+
+def example_function_2(x, y):
+    time.sleep(1)
+    return x + y
+
+
+def test_measure_time():
+   
+    elapsed = measure_time(example_function_1)
+    print(f"Время выполнения example_function_1: {elapsed:.3f} секунд")
+
+  
+    elapsed = measure_time(example_function_2, 3, 7)
+    print(f"Время выполнения example_function_2: {elapsed:.3f} секунд")
+
+
+test_measure_time()
